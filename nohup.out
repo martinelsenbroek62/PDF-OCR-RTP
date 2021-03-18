@@ -1,0 +1,671 @@
+/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/backends/amqp.py:68: CPendingDeprecationWarning: 
+    The AMQP result backend is scheduled for deprecation in     version 4.0 and removal in version v5.0.     Please use RPC backend or a persistent backend.
+
+  alternative='Please use RPC backend or a persistent backend.')
+[2017-05-11 08:56:57,528: INFO/PoolWorker-1] Re-OCR or extract text is starting again ...................... 
+[2017-05-11 08:56:59,222: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 08:57:00,509: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 08:57:06,491: INFO/MainProcess] mingle: all alone
+[2017-05-11 08:57:12,115: INFO/MainProcess] celery@convoicoi ready.
+[2017-05-11 10:41:29,898: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 110] Connection timed out
+[2017-05-11 10:41:30,184: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 2.00 seconds...
+
+[2017-05-11 10:41:32,215: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 4.00 seconds...
+
+[2017-05-11 10:41:36,249: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 6.00 seconds...
+
+[2017-05-11 10:41:42,283: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 8.00 seconds...
+
+[2017-05-11 10:41:51,326: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 10:41:53,882: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 10:41:54,855: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 110] Connection timed out
+[2017-05-11 10:41:55,963: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 10:41:57,555: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 10:42:02,216: INFO/MainProcess] mingle: all alone
+[2017-05-11 10:42:06,698: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-05-11 10:42:07,700: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 10:42:09,418: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 10:42:12,610: INFO/MainProcess] mingle: all alone
+[2017-05-11 13:57:57,036: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 110] Connection timed out
+[2017-05-11 13:57:59,541: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 13:58:01,195: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 13:58:02,346: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 110] Connection timed out
+[2017-05-11 13:58:03,472: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 13:58:05,035: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 13:58:09,816: INFO/MainProcess] mingle: all alone
+[2017-05-11 13:58:14,676: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-05-11 13:58:15,729: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 13:58:17,260: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 13:58:20,453: INFO/MainProcess] mingle: all alone
+[2017-05-11 20:52:41,321: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 110] Connection timed out
+[2017-05-11 20:52:44,149: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 20:52:54,112: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 20:52:55,605: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 110] Connection timed out
+[2017-05-11 20:52:56,950: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 20:52:58,634: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 20:53:04,893: INFO/MainProcess] mingle: all alone
+[2017-05-11 20:53:10,959: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-05-11 20:53:12,362: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 20:53:14,182: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 20:53:17,761: INFO/MainProcess] mingle: all alone
+
+Restarting celery worker (/project/fbone/fbone/env/bin/celery -A fbone.ai.tasks worker -c 1 --max-tasks-per-child=1 --loglevel=info --workdir=/project/fbone/fbone -Q pdf_request)
+ 
+ -------------- celery@convoicoi v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-75-generic-x86_64-with-Ubuntu-16.04-xenial 2017-05-11 08:56:57
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         fbone.tasks:0x7f805b475bd0
+- ** ---------- .> transport:   amqp://guest:**@linux7.sima.io:5676//
+- ** ---------- .> results:     amqp://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> pdf_request      exchange=pdf_request(direct) key=pdf_request
+                
+
+[tasks]
+  . ai.pdf_request
+
+/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/backends/amqp.py:68: CPendingDeprecationWarning: 
+    The AMQP result backend is scheduled for deprecation in     version 4.0 and removal in version v5.0.     Please use RPC backend or a persistent backend.
+
+  alternative='Please use RPC backend or a persistent backend.')
+[2017-05-11 21:16:49,121: INFO/PoolWorker-1] Re-OCR or extract text is starting again ...................... 
+[2017-05-11 21:16:50,561: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 21:16:51,973: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 21:16:57,704: INFO/MainProcess] mingle: all alone
+[2017-05-11 21:17:03,341: INFO/MainProcess] celery@convoicoi ready.
+[2017-05-11 21:41:05,051: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 110] Connection timed out
+[2017-05-11 21:41:13,019: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 21:41:26,778: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 21:41:29,799: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 110] Connection timed out
+[2017-05-11 21:41:33,857: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 21:41:40,973: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 21:41:46,810: INFO/MainProcess] mingle: all alone
+[2017-05-11 21:41:52,440: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-05-11 21:41:55,206: INFO/MainProcess] Connected to amqp://guest:**@linux7.sima.io:5676//
+[2017-05-11 21:41:57,254: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 21:42:01,043: INFO/MainProcess] mingle: all alone
+[2017-05-11 21:44:19,307: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 600, in start
+    c.loop(*c.loop_args())
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/project/fbone/fbone/env/local/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 110] Connection timed out
+[2017-05-11 21:44:39,332: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 2.00 seconds...
+
+[2017-05-11 21:45:01,355: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 4.00 seconds...
+
+[2017-05-11 21:45:25,385: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 6.00 seconds...
+
+[2017-05-11 21:45:51,417: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 8.00 seconds...
+
+[2017-05-11 21:46:19,452: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 10.00 seconds...
+
+[2017-05-11 21:46:49,483: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 12.00 seconds...
+
+[2017-05-11 21:47:21,515: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 14.00 seconds...
+
+[2017-05-11 21:47:55,547: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 16.00 seconds...
+
+[2017-05-11 21:48:31,583: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 18.00 seconds...
+
+[2017-05-11 21:49:09,627: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 20.00 seconds...
+
+[2017-05-11 21:49:49,667: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 22.00 seconds...
+
+[2017-05-11 21:50:31,715: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 24.00 seconds...
+
+[2017-05-11 21:51:15,761: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 26.00 seconds...
+
+[2017-05-11 21:52:01,807: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 28.00 seconds...
+
+[2017-05-11 21:52:49,852: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 30.00 seconds...
+
+[2017-05-11 21:53:39,904: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:54:31,953: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:55:24,007: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:56:16,056: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:57:08,107: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:58:00,158: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:58:52,214: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 21:59:44,267: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:00:36,320: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:01:28,366: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:02:20,421: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:03:12,471: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:04:04,523: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:04:56,571: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:05:48,629: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:06:40,685: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:07:32,734: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:08:24,787: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:09:16,839: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:10:08,888: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:11:00,933: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:11:52,983: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:12:45,040: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:13:37,089: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:14:29,139: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:15:21,187: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:16:13,239: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:17:05,294: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:17:57,356: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:18:49,411: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:19:41,463: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:20:33,516: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:21:25,570: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:22:17,624: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:23:09,680: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:24:01,734: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:24:53,788: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:25:45,841: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:26:37,891: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:27:29,943: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:28:21,988: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:29:14,046: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:30:06,123: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:30:58,208: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:31:50,275: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:32:42,327: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:33:34,401: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:34:26,487: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+[2017-05-11 22:35:18,547: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 32.00 seconds...
+
+
+Restarting celery worker (/project/fbone/fbone/env/bin/celery -A fbone.ai.tasks worker -c 1 --max-tasks-per-child=1 --loglevel=info --workdir=/project/fbone/fbone -Q pdf_request)
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@convoicoi v4.0.2 (latentcall)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-75-generic-x86_64-with-Ubuntu-16.04-xenial 2017-05-11 21:16:49
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         fbone.tasks:0x7f457f925c10
+- ** ---------- .> transport:   amqp://guest:**@linux7.sima.io:5676//
+- ** ---------- .> results:     amqp://
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> pdf_request      exchange=pdf_request(direct) key=pdf_request
+                
+
+[tasks]
+  . ai.pdf_request
+
+/project/fbone/fbone/env/local/lib/python2.7/site-packages/celery/backends/amqp.py:68: CPendingDeprecationWarning: 
+    The AMQP result backend is scheduled for deprecation in     version 4.0 and removal in version v5.0.     Please use RPC backend or a persistent backend.
+
+  alternative='Please use RPC backend or a persistent backend.')
+[2017-05-11 22:36:11,193: INFO/PoolWorker-1] Re-OCR or extract text is starting again ...................... 
+[2017-05-11 22:36:11,198: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 2.00 seconds...
+
+[2017-05-11 22:36:13,227: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 4.00 seconds...
+
+[2017-05-11 22:36:17,242: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 6.00 seconds...
+
+[2017-05-11 22:36:23,261: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 8.00 seconds...
+
+[2017-05-11 22:36:31,281: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 10.00 seconds...
+
+[2017-05-11 22:36:41,304: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 12.00 seconds...
+
+[2017-05-11 22:36:53,330: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 14.00 seconds...
+
+[2017-05-11 22:37:07,358: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 16.00 seconds...
+
+[2017-05-11 22:37:23,388: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@linux7.sima.io:5676//: [Errno -3] Temporary failure in name resolution.
+Trying again in 18.00 seconds...
+
