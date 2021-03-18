@@ -25,7 +25,7 @@ PDF-OCR-RTP is a Python Flask app let users do amazing things with pdf file.
 
 1. Deploy AI code
         
-    # Update pip and virtualenv
+    Update pip and virtualenv
 
     `sudo pip install --upgrade pip`
 
@@ -36,14 +36,14 @@ PDF-OCR-RTP is a Python Flask app let users do amazing things with pdf file.
     sudo pip install --upgrade virtualenv
     ```
         
-    # Run env environment
+    Run env environment
 
     ```
     virtualenv env
     source env/bin/activate
     ```
         
-    # Install all libs which need to deploy  code
+    Install all libs which need to deploy  code
 
     ```
     sudo yum groupinstall 'Development Tools'
@@ -51,11 +51,11 @@ PDF-OCR-RTP is a Python Flask app let users do amazing things with pdf file.
     cd libs && sudo rpm -Uvh libdmtx-0.7.2-16.el7.x86_64.rpm
     ```
 
-    # Run file deploy.py in libs
+    Run file deploy.py in libs
 
     `python deploy.py`
         
-    # After everything is finished, run this command to test the celery:
+    After everything is finished, run this command to test the celery:
 
     `celery -A fbone.ai.tasks worker -c 1 --max-tasks-per-child=1 --loglevel=info --workdir=/ai/PDF-OCR-RTP/ -Q pdf_request`
 
@@ -144,7 +144,7 @@ PDF-OCR-RTP is a Python Flask app let users do amazing things with pdf file.
                                  
 5. Install supervisor
 
-    # install
+    Install
 
     ```
     sudo pip install supervisor
@@ -152,7 +152,7 @@ PDF-OCR-RTP is a Python Flask app let users do amazing things with pdf file.
     sudo mkdir -p /var/log/supervisor/
     ```
                      
-    # Check supervisor is running after installing
+    Check supervisor is running after installing
 
     ```
     (env) [karen@ip-172-30-3-218 fbone]$ sudo netstat -anp | grep 9001
@@ -160,11 +160,11 @@ PDF-OCR-RTP is a Python Flask app let users do amazing things with pdf file.
     tcp        0      0 0.0.0.0:9001                0.0.0.0:*                   LISTEN      18392/python2.7
     ```
 
-    # Run supervisor
+    Run supervisor
 
     `sudo /usr/local/bin/supervisord -c /etc/supervisord.conf` (or you can find a script to start/stop/restart Supervisor and put it in /etc/init.d)
                          
-    # Manage supervisor
+    Manage supervisor
 
     ```
     sudo /usr/local/bin/supervisorctl
